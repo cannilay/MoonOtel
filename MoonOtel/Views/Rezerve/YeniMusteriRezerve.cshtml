@@ -1,0 +1,123 @@
+﻿@{
+    ViewBag.Title = "YeniMusteri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@if (TempData["HataMesaji"] != null)
+{
+    <div class="alert alert-danger">
+        @TempData["HataMesaji"]
+    </div>
+}
+
+<!-- Form ve diğer alanlar burada yer alır -->
+
+@using (Html.BeginForm("YeniMusteri", "Musteri", FormMethod.Post))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Rezervasyon Formu</h2>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="ad">Ad</label>
+                <input type="text" pattern="^[A-Za-z]{0,20}$" title="Geçerli bir ad giriniz." class="form-control" id="ad" name="ad" placeholder="Ad" required />
+            </div>
+            <div class="form-group">
+                <label for="soyad">Soyad</label>
+                <input type="text" pattern="^[A-Za-z]{0,20}$" title="Geçerli bir soyad giriniz." class="form-control" id="soyad" name="soyad" placeholder="Soyad" required />
+            </div>
+            <div class="form-group">
+                <label for="cinsiyet">Cinsiyet</label>
+                <select class="form-control" id="cinsiyet" name="cinsiyet" required>
+                    <option value="Erkek">Erkek</option>
+                    <option value="Kadın">Kadın</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="adres">Adres</label>
+                <input type="text" class="form-control" id="adres" name="adres" placeholder="Adres" required />
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon</label>
+                <input type="tel" pattern="^[0-9]{11}$" title="Geçerli bir telefon numarası giriniz." class="form-control" id="telefon" name="telefon" placeholder="Telefon" required>
+            </div>
+            <div class="form-group">
+                <label for="eposta">E-Posta</label>
+                <input type="email" pattern="[a-z0-9._%+/-]+@("@")[a-z0-9.-]+\.[a-z]{2,4}$" title="Geçerli bir e-posta giriniz." class="form-control" id="eposta" name="eposta" placeholder="E-Posta" required>
+            </div>
+            <div class="form-group">
+                <label for="oda">Oda</label>
+                <select class="form-control" id="odaID" name="odaID" required>
+                    <option value="">Oda Seçiniz</option>
+                    <option value="1">Oda 1 (3 Kişilik)</option>
+                    <option value="2">Oda 2 (3 Kişilik)</option>
+                    <option value="3">Oda 3 (3 Kişilik)</option>
+                    <option value="4">Oda 4 (3 Kişilik)</option>
+                    <option value="5">Oda 5 (3 Kişilik)</option>
+                    <option value="6">Oda 6 (3 Kişilik)</option>
+                    <option value="7">Oda 7 (3 Kişilik)</option>
+                    <option value="8">Oda 8 (3 Kişilik)</option>
+                    <option value="9">Oda 9 (3 Kişilik)</option>
+                    <option value="10">Oda 10 (3 Kişilik)</option>
+                    <option value="11">Oda 11 (2 Kişilik)</option>
+                    <option value="12">Oda 12 (2 Kişilik)</option>
+                    <option value="13">Oda 13 (2 Kişilik)</option>
+                    <option value="14">Oda 14 (2 Kişilik)</option>
+                    <option value="15">Oda 15 (2 Kişilik)</option>
+                    <option value="16">Oda 16 (2 Kişilik)</option>
+                    <option value="17">Oda 17 (2 Kişilik)</option>
+                    <option value="18">Oda 18 (2 Kişilik)</option>
+                    <option value="19">Oda 19 (2 Kişilik)</option>
+                    <option value="20">Oda 20 (2 Kişilik)</option>
+                    <option value="21">Oda 21 (1 Kişilik)</option>
+                    <option value="22">Oda 22 (1 Kişilik)</option>
+                    <option value="23">Oda 23 (1 Kişilik)</option>
+                    <option value="24">Oda 24 (1 Kişilik)</option>
+                    <option value="25">Oda 25 (1 Kişilik)</option>
+                    <option value="26">Oda 26 (1 Kişilik)</option>
+                    <option value="27">Oda 27 (1 Kişilik)</option>
+                    <option value="28">Oda 28 (1 Kişilik)</option>
+                    <option value="29">Oda 29 (1 Kişilik)</option>
+                    <option value="30">Oda 30 (1 Kişilik)</option>
+                    <option value="31">VIP 31 (2 Kişilik)</option>
+                    <option value="32">VIP 32 (2 Kişilik)</option>
+                    <option value="33">VIP 33 (2 Kişilik)</option>
+                    <option value="34">VIP 34 (2 Kişilik)</option>
+                    <option value="35">VIP 35 (2 Kişilik)</option>
+                    <option value="36">VIP 36 (2 Kişilik)</option>
+                    <option value="37">VIP 37 (2 Kişilik)</option>
+                    <option value="38">VIP 38 (2 Kişilik)</option>
+                    <option value="39">VIP 39 (2 Kişilik)</option>
+                    <option value="40">VIP 40 (2 Kişilik)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="kisisayisi">Kişi Sayısı</label>
+                <select class="form-control" id="kisisayisi" name="kisisayisi" required>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="giristarihi">Giriş Tarihi</label>
+                <input type="date" class="form-control" id="girisTarihi" name="girisTarihi" placeholder="Giriş Tarihi" required>
+            </div>
+            <div class="form-group">
+                <label for="cikistarihi">Çıkış Tarihi</label>
+                <input type="date" class="form-control" id="cikisTarihi" name="cikisTarihi" placeholder="Çıkış Tarihi" required>
+            </div>
+            <div class="form-group">
+                <label for="durum">Durum</label>
+                <select class="form-control" id="durum" name="durum" required>
+                    <option value="">Durum Seçiniz</option>
+                    <option value="Rezerve">Rezerve</option>
+                </select>
+            </div>
+        </div>
+        <div style="margin-top:15px">
+            <button class="btn btn-info" id="btnkaydet" type="submit">Rezervasyon Ekle</button>
+        </div>
+    </div>
+
+}

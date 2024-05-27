@@ -1,0 +1,112 @@
+﻿@model MoonOtel.Models.MusteriKayit
+@{
+    ViewBag.Title = "Duzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Guncelle", "Musteri", FormMethod.Post))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Müşteri Düzenle</h2>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="ad">Ad</label>
+                @Html.TextBoxFor(m => m.ad, new { @class = "form-control", @placeholder = "Ad giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="soyad">Soyad</label>
+                @Html.TextBoxFor(m => m.soyad, new { @class = "form-control", @placeholder = "Soyad giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="cinsiyet">Cinsiyet</label>
+                @Html.DropDownListFor(m => m.cinsiyet, new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "Kadın", Value = "Kadın" },
+                    new SelectListItem { Text = "Erkek", Value = "Erkek" }
+                }, new { @class = "form-control", @required = "required" })
+            </div>
+
+            <div class="form-group">
+                <label for="adres">Adres</label>
+                @Html.TextBoxFor(m => m.adres, new { @class = "form-control", @placeholder = "Adres giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon</label>
+                @Html.TextBoxFor(m => m.telefon, new { @class = "form-control", @placeholder = "Telefon giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="eposta">E-Posta</label>
+                @Html.TextBoxFor(m => m.eposta, new { @class = "form-control", @placeholder = "E-Posta giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="oda">Oda</label>
+                @Html.DropDownListFor(m => m.odaID, new List<SelectListItem>
+           {
+               new SelectListItem { Text ="Oda 1 (3 Kişilik)", Value = "Oda 1"},
+               new SelectListItem { Text ="Oda 2 (3 Kişilik)", Value = "Oda 2"},
+               new SelectListItem { Text ="Oda 3 (3 Kişilik)", Value = "Oda 3"},
+               new SelectListItem { Text ="Oda 4 (3 Kişilik)", Value = "Oda 4"},
+               new SelectListItem { Text ="Oda 5 (3 Kişilik)", Value = "Oda 5"},
+               new SelectListItem { Text ="Oda 6 (3 Kişilik)", Value = "Oda 6"},
+               new SelectListItem { Text ="Oda 7 (3 Kişilik)", Value = "Oda 7"},
+               new SelectListItem { Text ="Oda 8 (3 Kişilik)", Value = "Oda 8"},
+               new SelectListItem { Text ="Oda 9 (3 Kişilik)", Value = "Oda 9"},
+               new SelectListItem { Text ="Oda 10 (3 Kişilik)", Value = "Oda 10"},
+               new SelectListItem { Text ="Oda 11 (2 Kişilik)", Value = "Oda 11"},
+               new SelectListItem { Text ="Oda 12 (2 Kişilik)", Value = "Oda 12"},
+               new SelectListItem { Text ="Oda 13 (2 Kişilik)", Value = "Oda 13"},
+               new SelectListItem { Text ="Oda 14 (2 Kişilik)", Value = "Oda 14"},
+               new SelectListItem { Text ="Oda 15 (2 Kişilik)", Value = "Oda 15"},
+               new SelectListItem { Text ="Oda 16 (2 Kişilik)", Value = "Oda 16"},
+               new SelectListItem { Text ="Oda 17 (2 Kişilik)", Value = "Oda 17"},
+               new SelectListItem { Text ="Oda 18 (2 Kişilik)", Value = "Oda 18"},
+               new SelectListItem { Text ="Oda 19 (2 Kişilik)", Value = "Oda 19"},
+               new SelectListItem { Text ="Oda 20 (2 Kişilik)", Value = "Oda 20"},
+               new SelectListItem { Text ="Oda 21 (1 Kişilik)", Value = "Oda 21"},
+               new SelectListItem { Text ="Oda 22 (1 Kişilik)", Value = "Oda 22"},
+               new SelectListItem { Text ="Oda 23 (1 Kişilik)", Value = "Oda 23"},
+               new SelectListItem { Text ="Oda 24 (1 Kişilik)", Value = "Oda 24"},
+               new SelectListItem { Text ="Oda 25 (1 Kişilik)", Value = "Oda 25"},
+               new SelectListItem { Text ="Oda 26 (1 Kişilik)", Value = "Oda 26"},
+               new SelectListItem { Text ="Oda 27 (1 Kişilik)", Value = "Oda 27"},
+               new SelectListItem { Text ="Oda 28 (1 Kişilik)", Value = "Oda 28"},
+               new SelectListItem { Text ="Oda 29 (1 Kişilik)", Value = "Oda 29"},
+               new SelectListItem { Text ="Oda 30 (1 Kişilik)", Value = "Oda 30"},
+               new SelectListItem { Text ="VIP 31 (2 Kişilik)", Value = "VIP 31"},
+               new SelectListItem { Text ="VIP 32 (2 Kişilik)", Value = "VIP 32"},
+               new SelectListItem { Text ="VIP 33 (2 Kişilik)", Value = "VIP 33"},
+               new SelectListItem { Text ="VIP 34 (2 Kişilik)", Value = "VIP 34"},
+               new SelectListItem { Text ="VIP 35 (2 Kişilik)", Value = "VIP 35"},
+               new SelectListItem { Text ="VIP 36 (2 Kişilik)", Value = "VIP 36"},
+               new SelectListItem { Text ="VIP 37 (2 Kişilik)", Value = "VIP 37"},
+               new SelectListItem { Text ="VIP 38 (2 Kişilik)", Value = "VIP 38"},
+               new SelectListItem { Text ="VIP 39 (2 Kişilik)", Value = "VIP 39"},
+               new SelectListItem { Text ="VIP 40 (2 Kişilik)", Value = "VIP 40"}
+           }, new { @class = "form-control", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="kisisayisi">Kişi Sayısı</label>
+                @Html.DropDownListFor(m => m.kisiSayisi, new List<SelectListItem>
+           {
+                new SelectListItem { Text ="1", Value = "1"},
+                new SelectListItem { Text ="2", Value = "2"},
+                new SelectListItem { Text ="3", Value = "3"}
+           }, new { @class = "form-control", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="giristarihi">Giriş Tarihi</label>
+                @Html.TextBoxFor(m => m.girisTarihi, new { @class = "form-control", @placeholder = "Giriş Tarihi giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="cikistarihi">Çıkış Tarihi</label>
+                @Html.TextBoxFor(m => m.cikisTarihi, new { @class = "form-control", @placeholder = "Çıkış Tarihi giriniz", @required = "required" })
+            </div>
+            @Html.HiddenFor(m => m.musteriID)
+        </div>
+        <div style="margin-top:15px">
+            <button class="btn btn-info" type="submit">Düzenle</button>
+        </div>
+    </div>
+}

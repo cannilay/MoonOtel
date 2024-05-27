@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "YeniPersonel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("YeniPersonel", "Personel", FormMethod.Post))
+{
+    <div class="card">
+        <div class="card-header">
+            <h3 class="card-title">Personel Ekle</h3>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="ad">Ad</label>
+                <input type="text" pattern="^[A-Za-z]{0,20}$" title="Geçerli bir ad giriniz." class="form-control" id="ad" name="ad" placeholder="Ad" required />
+            </div>
+            <div class="form-group">
+                <label for="soyad">Soyad</label>
+                <input type="text" pattern="^[A-Za-z]{0,20}$" title="Geçerli bir soyad giriniz." class="form-control" id="soyad" name="soyad" placeholder="Soyad" required />
+            </div>
+            <div class="form-group">
+                <label for="cinsiyet">Cinsiyet</label>
+                <select class="form-control" id="cinsiyet" name="cinsiyet" required>
+                    <option value="Erkek">Erkek</option>
+                    <option value="Kadın">Kadın</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon</label>
+                <input type="text" pattern="^[0-9]{11}$" title="Geçerli bir telefon numarası giriniz." class="form-control" id="telefon" name="telefon" placeholder="Telefon" required>
+            </div>
+            <div class="form-group">
+                <label for="eposta">E-Posta</label>
+                <input type="email" pattern="[a-z0-9._%+/-]+@("@")[a-z0-9.-]+\.[a-z]{2,4}$" title="Geçerli bir e-posta giriniz." class="form-control" id="eposta" name="eposta" placeholder="E-Posta" required>
+            </div>
+            <div class="form-group">
+                <label for="unvan">Unvan</label>
+                <select class="form-control" id="unvan" name="unvan" required>
+                    <option value="Personel">Personel</option>
+                    <option value="Aşçı">Aşçı</option>
+                    <option value="Temizlikçi">Temizlikçi</option>
+                </select>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button class="btn btn-info" id="btnkaydet" type="submit">Personel Ekle</button>
+        </div>
+    </div>
+}
+
+

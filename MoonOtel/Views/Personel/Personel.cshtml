@@ -1,0 +1,60 @@
+﻿
+@{
+    ViewBag.Title = "Personel";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<MoonOtel.Models.Personel>
+
+<div class="card">
+    <div class="card-header">
+        <table style="width:100%;">
+            <tr>
+                <td><h3>Personeller</h3></td>
+            </tr>
+
+        </table>
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Cinsiyet</th>
+                    <th>Telefon</th>
+                    <th>E-Posta</th>
+                    <th>Unvan</th>
+                    <th>
+                        <div class="card-footer text-center">
+                            <a href="/Personel/YeniPersonel" class="btn btn-success">Personel Ekle</a>
+                        </div>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MoonOtel.Models.Personel personel in Model)
+                {
+                    <tr>
+                        <td>@personel.ad</td>
+                        <td>@personel.soyad</td>
+                        <td>@personel.cinsiyet</td>
+                        <td>@personel.telefon</td>
+                        <td>@personel.eposta</td>
+                        <td>@personel.unvan</td>
+
+
+                        <td style="text-align: right; text-align:center;">
+                            <a href="/Personel/Duzenle/@personel.personelD" class="btn btn-info" title="Düzenle" style="width: 40px;">
+                                <i class="fa fa-edit"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
+

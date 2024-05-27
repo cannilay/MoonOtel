@@ -1,0 +1,54 @@
+﻿@model MoonOtel.Models.Personel
+@{
+    ViewBag.Title = "Duzenle";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@using (Html.BeginForm("Guncelle", "Personel", FormMethod.Post))
+{
+    <div class="card">
+        <div class="card-header">
+            <h2 class="card-title">Personel Düzenle</h2>
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                <label for="ad">Ad</label>
+                @Html.TextBoxFor(p => p.ad, new { @class = "form-control", @placeholder = "Ad giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="soyad">Soyad</label>
+                @Html.TextBoxFor(p => p.soyad, new { @class = "form-control", @placeholder = "Soyad giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="cinsiyet">Cinsiyet</label>
+                @Html.DropDownListFor(m => m.cinsiyet, new List<SelectListItem>
+                {
+                    new SelectListItem { Text = "Kadın", Value = "Kadın" },
+                    new SelectListItem { Text = "Erkek", Value = "Erkek" }
+                }, new { @class = "form-control", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="telefon">Telefon</label>
+                @Html.TextBoxFor(p => p.telefon, new { @class = "form-control", @placeholder = "Telefon giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="eposta">E-Posta</label>
+                @Html.TextBoxFor(p => p.eposta, new { @class = "form-control", @placeholder = "E-Posta giriniz", @required = "required" })
+            </div>
+            <div class="form-group">
+                <label for="unvan">Unvan</label>
+                @Html.DropDownListFor(p => p.telefon, new List<SelectListItem>
+                 {
+                    new SelectListItem { Text = "Personel", Value = "Personel" },
+                    new SelectListItem { Text = "Aşçı", Value = "Aşçı" },
+                    new SelectListItem { Text = "Temizlikçi", Value = "Temizlikçi" }
+                 }, new { @class = "form-control", @required = "required" })
+            </div>
+            @Html.HiddenFor(m => m.personelD)
+        </div>
+        <div style="margin-top:15px">
+            <button class="btn btn-info" id="btnkaydet" type="submit">Düzenle</button>
+        </div>
+    </div>
+}

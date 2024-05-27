@@ -1,0 +1,119 @@
+﻿@{
+    MoonOtel.Models.Personel p = (MoonOtel.Models.Personel)Session["Personel"];
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Moon Otel | Anasayfa</title>
+    <link rel="shortcut icon" type="image/png" href="~/Content/AdminLTE/dist/img/moon2.jpg" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link rel="stylesheet" href="~/Content/AdminLTE/plugins/fontawesome-free/css/all.min.css">
+    <link rel="stylesheet" href="~/Content/AdminLTE/dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition sidebar-mini">
+    <div class="wrapper">
+        <nav class="main-header navbar navbar-expand navbar-white navbar-light">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" data-widget="pushmenu" href="#" role="button"><i class="fas fa-bars"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <aside class="main-sidebar sidebar-light-white elevation-4">
+            <a href="index3.html" class="brand-link">
+                <img src="~/Content/AdminLTE/dist/img/moon2.jpg" alt="" class="brand-image img-circle elevation-3" style="opacity: .8">
+                <span class="brand-text font-weight-light">Moon Otel</span>
+            </a>
+            <div class="sidebar">
+                <div class="user-panel mt-3 pb-3 mb-3 d-flex">
+                    <div class="image">
+                        <img src="~/Content/AdminLTE/dist/img/user1.jpg" class="img-circle elevation-2" alt="User Image">
+                    </div>
+                    <div class="info">
+                        <a href="#" class="d-block">
+                            @p.ad @p.soyad
+                        </a>
+                    </div>
+                </div>
+                <nav class="mt-2">
+                    <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
+                        <li class="nav-item">
+                            <a href="/Musteri/Musteri" class="nav-link">
+                                <i class="nav-icon fas fa-person-booth" style="color:steelblue;"></i>
+                                <p>
+                                    Müşteriler
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Personel/Personel" class="nav-link">
+                                <i class="nav-icon fas fa-briefcase" style="color: steelblue;"></i>
+                                <p>
+                                    Personeller
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="/Rezerve/YeniMusteriRezerve" class="nav-link">
+                                <i class="nav-icon fas fa-briefcase" style="color: steelblue;"></i>
+                                <p>
+                                    Rezervasyon
+                                </p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="@Url.Action("Index", "Home")" class="nav-link">
+                                <i class="nav-icon fas fa-door-closed" style="color: darkred"></i>
+                                <p>
+                                    Çıkış Yap
+                                </p>
+                            </a>
+                        </li>
+
+</nav>
+            </div>
+        </aside>
+        <div class="content-wrapper">
+            @*<style>
+                .full-screen-image {
+                    width: 100%;
+                    height: 100vh;
+                    object-fit: cover;
+                }
+            </style>*@
+
+            @*<img class="full-screen-image" src="~/Content/AdminLTE/dist/img/plan.jpg" />*@
+            <div class="content-header">
+                <div class="container-fluid">
+                    <div class="row mb-2">
+                    </div>
+                </div>
+            </div>
+            <div class="content">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            @RenderBody()
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <aside class="control-sidebar control-sidebar-dark">
+            <div class="p-3">
+                <h5>Title</h5>
+                <p>Sidebar content</p>
+            </div>
+
+        </aside>
+        <footer class="main-footer">
+            <strong>Telif Hakkı &copy; 2023-2024 <a style="color: steelblue">Moon Otel</a>.</strong> Tüm Haklar Saklıdır.
+        </footer>
+    </div>
+    <script src="~/Content/AdminLTE/plugins/jquery/jquery.min.js"></script>
+    <script src="~/Content/AdminLTE/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/Content/AdminLTE/dist/js/adminlte.min.js"></script>
+</body>
+</html>

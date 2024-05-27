@@ -1,0 +1,70 @@
+﻿@{
+    ViewBag.Title = "Musteri";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<MoonOtel.Models.MusteriKayit>
+
+<div class="card">
+    <div class="card-header">
+        <table, style="width:100%;">
+            <tr>
+                <td><h3>Müşteriler</h3></td>
+            </tr>
+        </table,>
+
+    </div>
+    <div class="card-body">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>Ad</th>
+                    <th>Soyad</th>
+                    <th>Cinsiyet</th>
+                    <th>Adres</th>
+                    <th>Telefon</th>
+                    <th>E-Posta</th>
+                    <th>Oda</th>
+                    <th>Kişi Sayısı</th>
+                    <th>Giriş Tarihi</th>
+                    <th>Cıkış Tarihi</th>
+                    <th>Durum</th>
+                    <th>    <a href="/Musteri/YeniMusteri/" class="btn btn-success">Müşteri Ekle</a> </th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (MoonOtel.Models.MusteriKayit musteri in Model)
+                {
+                    <tr>
+                        <td>@musteri.ad</td>
+                        <td>@musteri.soyad</td>
+                        <td>@musteri.cinsiyet</td>
+                        <td>@musteri.adres</td>
+                        <td>@musteri.telefon</td>
+                        <td>@musteri.eposta</td>
+                        <td>@musteri.odaID</td>
+                        <td>@musteri.kisiSayisi</td>
+                        <td>@musteri.girisTarihi</td>
+                        <td>@musteri.cikisTarihi</td>
+                        <td>@musteri.durum</td>
+
+
+
+                        <td style="text-align: right; text-align:center;">
+                            <a href="/Musteri/Duzenle/@musteri.musteriID" class="btn btn-info" title="Düzenle" style="width: 40px;">
+                                <i class="fa fa-edit"></i>
+                            </a>
+
+                            <a href="/Musteri/Sil/@musteri.musteriID" class="btn btn-danger btnsil" id="btnsil" title="Sil" style="width: 40px;">
+                                <i class="fa fa-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+
